@@ -14,7 +14,8 @@ body {
 /* HEADER  */
 header {
 	h1 {display: none;}
-	img {padding: 1rem 0 .5rem 2%; display: block;}
+    img {padding: 1rem 0 .5rem 2%; display: block;}
+    margin-top: 44px;                           // Ensure hamburger button doesn't cover header.
 } // end header
 
 
@@ -37,6 +38,8 @@ nav {
         border-radius: 10px;                    // Round the edges.
         margin: 6px 0 6px 2%;                   // Move it away from edges of viewport.
     }
+
+    ul.closed { display: none; }                // Used by hamburger button.
 
     ul li a {
         display: block;                         // Make links clickable across entire width of screen;

@@ -120,6 +120,9 @@ body {
 }
 
 /* HEADER  */
+header {
+  margin-top: 44px;
+}
 header h1 {
   display: none;
 }
@@ -146,6 +149,9 @@ nav button {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin: 6px 0 6px 2%;
+}
+nav ul.closed {
+  display: none;
 }
 nav ul li a {
   display: block;
@@ -214,6 +220,9 @@ footer {
   /* NAVIGATION  */
   nav {
     position: relative;
+  }
+  nav ul.closed {
+    display: block;
   }
   nav button {
     display: none;

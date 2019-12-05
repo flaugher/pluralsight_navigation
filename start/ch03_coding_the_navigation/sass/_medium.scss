@@ -1,6 +1,7 @@
 /* NAVIGATION  */
 nav {
     position: relative;                 // Move position to where it would normally go.
+    ul.closed { display: block; }       // When you widen the page, the hamburger icon disappears no matter what.
     button {
         display: none;                  // Hide button on medium screens.
     }
