@@ -1,4 +1,44 @@
-/* NAVigation  */
+/* NAVIGATION  */
+nav {
+    position: relative;                 // Move position to where it would normally go.
+    button {
+        display: none;                  // Hide button on medium screens.
+    }
+
+    ul { margin-left: 2%; }             // Line up menu with top logo.
+
+    ul li { float: left; }              // Make horizontal menu. Remember to add clearfix class to nav HTML tag.
+
+    ul li a {
+        border: none;                   // Remove bottom border from submenu links.
+        border-right: 1px solid rgba(0,0,0,0.2);  // Separate the border links.
+        padding: .7rem .9rem;
+        transition: background 0.3s linear;     // Make the ul li:hover transition below smoother.
+        -webkit-transition: background 0.3s linear;
+    }
+
+    ul li a span { display: none; }     // Do this so that if you make the viewport narrower, the top-level menu
+                                        // items don't wrap. Instead "POPULAR DESTINATIONS" becomes "DESTINATIONS"
+                                        // and so on.
+    ul li a:hover {
+        background-color: darken($menuColor, 10%);  // Darken all menu items on hover.
+    }
+
+    ul li ul {
+        left: -999em;                   // Move submenu UL way off the screen.
+        z-index: 99;                    // Ensure that submenu items are always above everything else.
+        background-color: lighten($menuColor, 10%);  // Make submenu items a little lighter.
+        position: absolute;             // Ensure they come back on hover or touch.
+    }
+
+    ul li:hover ul { left: auto; }      // Get submenu items to display on a hover event.
+
+    ul li ul li {
+        float: none;                    // Make submenu items stack instead of float.
+        border-bottom: 1px solid rgba(0,0,0,0.2);   // Separate items from each other.
+        width: 10rem;                   // Set items' width.
+    }
+}
 
 
 
