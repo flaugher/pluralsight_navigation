@@ -123,32 +123,68 @@ body {
 header h1 {
   display: none;
 }
-
 header img {
   padding: 1rem 0 .5rem 2%;
   display: block;
 }
 
-/* NAVigation  */
+/* NOTE: I REALLY DON'T SEE ANY ADVANTAGE TO THE WAY HE DID NAVIGATION IN THIS LESSON.  I WOULD JUST USE
+   WHAT HE DID IN LESSON 4. */
+/* NAVIGATION  */
+nav {
+  background-color: #c23e64;
+  -webkit-transition: max-height 0.5s;
+  -moz-transition: max-height 0.5s;
+  transition: max-height 0.5s;
+}
+nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  padding: .6rem 2%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+}
+nav ul li ul li a {
+  padding-left: 8%;
+}
+nav ul li.active > a {
+  background-color: black;
+}
+nav ul {
+  overflow: hidden;
+}
+nav ul.closed {
+  max-height: 0;
+}
+nav ul.open {
+  max-height: 31rem;
+}
+nav button {
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 3.5rem;
+  margin: 3px 2%;
+  border-radius: 5px;
+}
+
 /* MAIN  */
 main {
   padding: 1rem 0;
 }
-
 main h1 {
   font-size: 2.5rem;
   color: #c23e64;
   padding-left: 2%;
 }
-
 main figure.w100 img {
   width: 100%;
 }
-
 main figure.w100 {
   width: 100%;
 }
-
 main .box, main .boxA, main .boxB {
   margin-top: 1rem;
   padding: 2rem 2%;
@@ -157,15 +193,12 @@ main .box, main .boxA, main .boxB {
   font-size: 2rem;
   color: #fff;
 }
-
 main .boxA {
   background-color: #0064a5;
 }
-
 main .boxB {
   background-color: #c23e64;
 }
-
 main .box span, main .boxA span, main .boxB span {
   display: block;
   font-size: 1rem;
@@ -187,11 +220,62 @@ footer {
 }
 
 @media only screen and (min-width: 35em) {
-  /* NAVigation  */
+  /* NAVIGATION  */
+  nav {
+    /* overides the float and line from the parent ul */
+    /* this displays the menus as drop downs  */
+  }
+  nav button {
+    display: none;
+  }
+  nav ul.closed {
+    max-height: 31rem;
+  }
+  nav ul {
+    margin-left: 2%;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  nav ul li {
+    float: left;
+  }
+  nav ul li a {
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: .9em;
+    padding: .7em .9em;
+  }
+  nav ul li a:hover {
+    background: #9c3150;
+  }
+  nav ul li ul {
+    /*rules for the sub menu items*/
+    position: absolute;
+    left: -999em;
+    /* pushes the menu way off to the side */
+    background-color: #ce6583;
+    width: 10em;
+    border: none;
+  }
+  nav ul li ul li {
+    float: none;
+  }
+  nav ul li ul li a {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  nav ul li a span {
+    display: none;
+  }
+  nav ul li:hover ul {
+    left: auto;
+    margin-left: 0;
+  }
+
   /* HEADER  */
   header {
     margin-top: 0;
   }
+
   /* MAIN  */
   main h1 {
     font-size: 5rem;
@@ -203,7 +287,9 @@ footer {
     font-size: 1.5rem;
   }
 }
-
 @media only screen and (min-width: 64em) {
-  /* NAVigation  */
+  /* NAVIGATION  */
+  nav ul li a span {
+    display: inline;
+  }
 }
