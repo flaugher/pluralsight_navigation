@@ -1,0 +1,48 @@
+@import "reset";
+
+@import "variables";
+
+@import "small-default";
+
+@import "mobilemenu";
+
+
+//35em is also 560px (if basefont is 16px)
+@media only screen and (min-width: 35rem) {
+	@import "medium";
+}
+
+/*
+The menu breaks at 1024 pixels wide.
+
+At exactly 1024px width the menu items display at different widths (see
+screenshots 03_, 04_, and 05_. This happens because the max width of 1024 is
+still in effect when the min width of 1024px has already started (see
+03_prog_enhance_breaks_at_1024px). The CSS overlaps.
+
+The fix is to come into into this file, styles.scss. Then do the following
+calculation:
+
+  (64rem x 16px/rem) + 1 = 1025px.
+
+Get the new rem value by taking 1025px/16px/rem = 64.0625rem.
+
+Change this line...
+
+  @media only screen and (min-width: 64rem) {
+
+to this:
+
+  @media only screen and (min-width: 64.0625rem) {
+
+This fixes the overlap problem.
+*/
+
+//64em is also 1024px (if basefont is 16px)
+//@media only screen and (min-width: 64rem) {
+//	@import "large";
+//}
+
+@media only screen and (min-width: 64.0625rem) {
+	@import "large";
+}

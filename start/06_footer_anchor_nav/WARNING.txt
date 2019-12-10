@@ -1,0 +1,18 @@
+REASONS FOR USING THIS SOLUTION
+
+The navigation takes over the whole screen giving your room for more links
+without scrolling.  See 01_view_height.png.  This future-proofs your code because
+will work on all future devices no matter their viewport height.
+
+This solution doesn't require any JavaScript.
+
+He says it's easy to use.
+
+He also likes the Open/Close labels on the hamburger button.
+
+WARNING
+
+There's a problem with my solution.  On small viewports, the menu appears at both the top and
+bottom of the screen.  He prefers this solution since it worked on every device he tests with.
+If you try to emulate it, you should compare your index and scss files to his to try to determine
+why you're seeing the navigation at the bottom on small viewports.
